@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>La bataille des vikings</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+</head>
+
+<body class="m-0 p-0">
+	<header>
+		<div class="banner">
+			<section class="logo mx-auto pt-5">
+				<img src="img/logo.png" alt="logo">
+			</section>
+		</div>
+	</header>
+
+	<div class="d-none d-lg-block">
+		<div class="section" id="section1">
+			<section class="container">
+				<div class="row">
+					<div class="col accordion game-details" id="header">
+						<div class="card border-0 bg-transparent">
+							<button class="btn btn-link d-none" type="button" data-toggle="collapse" data-target="#collapsible" aria-expanded="true" aria-controls="collapsible">
+								<div class="card-header" id="rulesTitle">
+							    	<h5>
+								        Règles du jeu
+							      	</h5>
+							    </div>
+							</button>
+						    <div id="collapsible" class="collapse show" aria-labelledby="rulesTitle" data-parent="#header">
+	      						<div class="card-body">
+									<p>Bienvenue sur ce jeu dans lequel 2 joueurs évoluent chacun leur tour pour s'affronter.
+									Comme dans Highlander, il ne peut en rester qu'un !<br>Voici les règles de la bataille :
+										<ul>
+											<li>Les obstacles, les armes et les joueurs sont placés aléatoirement sur la carte à chaque partie</li>
+											<li>Le premier joueur est tiré au sort et chaque joueur joue chacun son tour</li>
+											<li>Un joueur peut se déplacer horizontalement ou verticalement de une à trois cases. Il ne peut évidemment pas passer à travers un obstacle</li>
+											<li>Quand un joueur passe sur une case contenant une arme, il laisse son arme actuelle et la remplace par la nouvelle</li>
+											<li>Chaque arme provoque des points de dégâts différents, indiqués dans la liste à droite de la carte</li>
+										</ul>
+									</p>
+									<p>Les déplacements :
+										<ul>
+											<li>le joueur clique sur le bouton "Se déplacer" ou sur la touche M du clavier</li>
+											<li>Les cases dans lesquelles le joueur peut se déplacer sont mises en surbrillance</li>
+											<li>Le joueur avance son personnage avec les flèches directionnelles du clavier ou en cliquant sur une case avec la souris : attention, pas de retour en arrière possible !</li>
+											<li>Une fois le déplacement terminé, le joueur doit le valider pour passer la main : soit en cliquant sur le bouton "Valider", soit avec la touche "Entrée" du clavier (le déplacement souris est automatiquement validé)</li>
+										</ul>
+									</p>
+									<p>La bataille :
+										<ul>
+											<li>Une fois côte à côte, les joueurs peuvent livrer bataille.</li>
+											<li>Chacun leur tour, ils peuvent choisir d'attaquer (bouton "Attaquer" ou touche A), ou se défendre contre le prochain coup (bouton "Se défendre" ou touche D)</li>
+											<li>Les dégâts infligés à l'adversaire dépendent de l’arme possédée par le joueur</li>
+											<li>Lorsque le joueur se défend, il encaisse 50% de dégâts en moins qu’en temps normal</li>
+											<li>Dès que les points de vie d’un joueur (initialement à 100) tombent à 0 , celui-ci a perdu. Un message s’affiche et la partie est terminée.</li>
+										</ul>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col text-center">
+						<div id="launch-form" class="py-5">
+							<div class="row">
+								<div class="form-group col-lg-6">
+									<label for="name-player1">Nom du joueur 1</label>
+									<input type="text" class="form-control short" placeholder="Nom du Joueur 1" id="name-player1">
+								</div>
+								<div class="form-group col-lg-6">
+									<label for="name-player2">Nom du joueur 2</label>
+									<input type="text" class="form-control short" placeholder="Nom du Joueur 2" id="name-player2">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<button id="play-button" type="submit" class="btn btn-primary btn-lg">JOUER !</button>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+		</div>	
+		<div class="section" id="section2">
+			<section class="container">
+				<div class="row">
+					<div class="col-lg-2 game-details" id="left">		
+						<div id="players"></div>
+					</div>
+					<div class="col-lg-8 mx-auto">
+						<div class="mx-auto" id="game-grid">
+						</div>
+					</div>
+					<div class="col-lg-2 game-details" id="right">
+						<div class="text-center rounded p-1" id="weapons">
+							<h5>Armes</h5>
+							<ul class="list-unstyled"></ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+	
+		<footer class="section">
+			<div class="container">
+				<div class="row">
+					<p class="col-12 text-center">Copyright © Lisiane Turlure
+						<br>
+						Ressources graphiques : <a href="https://www.vecteezy.com/" target="blank">vecteezy</a> 
+					</p> 
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div class="d-block d-lg-none">
+		<p class="text-center">Ce jeu n'est pas disponible pour votre écran !</p>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="js/cell.js"></script>
+	<script src="js/grid.js"></script>
+	<script src="js/elements.js"></script>
+	<script src="js/players.js"></script>
+	<script src="js/weapons.js"></script>
+	<script src="js/game.js"></script>
+	<script src="js/launchers.js"></script>
+</body>
+
+</html>

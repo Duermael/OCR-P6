@@ -1,0 +1,91 @@
+body {
+	background: #a4e4f7;
+	color: white;
+}
+.banner {
+	background-image: url(../img/header-bg.png); 
+	background-color: #a4e4f7;
+	height: 304px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.banner .logo {
+	width: 340px;
+	height: 116px;
+	position: relative;
+}
+.card button {
+	color: #fff;
+}
+.card button:hover {
+	color:#fff;
+}
+#launch-form button {
+	background-color: #ff7f00;
+	border: 1px solid #b06923;
+}
+#launch-form button:hover {
+	background-color: #ff5d04;
+	border: 1px solid #b06923;
+}
+.section {
+	background-color: #85c7de;
+}
+#game-grid {
+	font-size: 0;
+	line-height: 0;
+	outline:1px solid #4486a1;
+}
+.grid-cell {
+	border:1px solid #4486a1;
+	display: inline-block;
+}
+.block {
+ 	background: url("../img/block.png") no-repeat center center;
+ 	background-size: contain; 
+}
+.elmt {
+	position: absolute;
+}
+.info-player {
+	background-color: #a4e4f7;
+	color: #4486a1;
+}
+#weapons {
+	background-color: #a4e4f7;
+	color: #4486a1;
+}
+.avatar-weapon {
+	max-width: 48px;
+	max-height: 48px;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	#game-grid {
+		width: 600px;
+		height: 600px;
+	}
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	.section {
+		max-width: 1250px;
+		margin:0 auto;
+	}
+	#game-grid {
+		width: 730px;
+		height: 730px;
+	}
+}
