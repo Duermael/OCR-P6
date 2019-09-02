@@ -1,7 +1,7 @@
 # OCR-P6
 Création d'un jeu de plateau tour par tour en JS orienté objet et jQuery
 
-Projet en ligne : http://lisianeturlure.com/p6-vikingsbattle/
+Projet en ligne : https://lisianeturlure.com/p6-vikingsbattle/
 
 Ce projet consiste à créer un jeu en ligne en JavaScript dans lequel 2 joueurs évoluent chacun leur tour pour s'affronter. Comme dans Highlander, il ne peut en rester qu'un !
 
